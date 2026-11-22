@@ -4,31 +4,31 @@
 [![rank](https://make.fun/badge/news-image-20261121/mikeykun477/news-image-20261121/rank.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 [![reward](https://make.fun/badge/news-image-20261121/mikeykun477/news-image-20261121/reward.svg)](https://make.fun/bounty/news-image-20261121?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261121)
 
-A make.fun entry for [news-image-20261121](https://make.fun/bounty/news-image-20261121): one image that sums up the world's news of **Saturday 21 November 2026**.
+A make.fun entry for [news-image-20261121](https://make.fun/bounty/news-image-20261121): the whole world's news of **Saturday 21 November 2026**, told in a single picture.
 
 ## The entry
 
-A newspaper front page — *The World Today* — dated **SATURDAY 21 NOVEMBER 2026**, built around the night the Gulf war widened to a new country:
+The picture is a newspaper front page — *The World Today* — for **SATURDAY 21 NOVEMBER 2026**. One page, seven stories, five continents:
 
-- **Lead:** Iran strikes Bahrain — Tehran's Guards say they hit two U.S. positions; Bahrain says a civilian industrial site burned, no one hurt, and its air defences stopped other attacks — over a hero image of the burning industrial site on the Gulf shore at night.
-- **COP31** in Antalya runs past its deadline; the summit president says a final deal is close, but the draft leaves out fossil fuels.
+- **The lead:** Iran strikes Bahrain. Tehran's Guards say they hit two U.S. positions; Bahrain says a civilian industrial site burned, nobody was hurt, and its air defences stopped the other attacks. The hero photograph shows the burning site on the Gulf shore at night.
+- **COP31** in Antalya runs past its deadline — the summit president says a final deal is close, but the draft leaves out fossil fuels.
 - **Mexico** captures FBI most-wanted cartel boss Fausto Isidro Meza Flores, "El Chapo Isidro", in Sinaloa; 11 dead in the violence that followed.
 - **Ukraine:** a Russian missile kills two in Zelensky's hometown Kryvyi Rih and wounds dozens; missiles and a drone cross into NATO member Poland.
-- **Gulf of Finland:** Russian cargo ship Sparta II ablaze after a drone strike; crew evacuates.
-- **Markets:** the AI sell-off pushes U.S. stocks into correction — the Nasdaq's worst week since March 2020 erases its 2026 gains; Nvidia halts H200 chip exports to China.
+- **Gulf of Finland:** the Russian cargo ship Sparta II burns after a drone strike; the crew evacuates.
+- **Markets:** the AI sell-off pushes U.S. stocks into correction — the Nasdaq's worst week since March 2020 wipes out its 2026 gains; Nvidia halts H200 chip exports to China.
 - **In brief:** specially bred mosquitoes cut dengue 69% in a Brazil study; the EU–Indonesia trade deal after 10 years; a Peru quake; a Nigeria boat capsizing kills 24; Paolo Bulgari dies at 89.
 
-Every fact on the page is from 21 November 2026, stated plainly with no hype. Nothing is invented: where a claim is one side's, the page says who said it ("Tehran's Guards say…", "Bahrain says…", "Finland says…").
+Every fact on the page comes from 21 November 2026, stated plainly and without hype. Nothing is invented: whenever a claim belongs to one side, the page names who said it — "Tehran's Guards say…", "Bahrain says…", "Finland says…".
 
 ## Why this image should win
 
-Dear judge: this is the one page a reader could pick up cold and walk away knowing what Saturday 21 November 2026 actually was. The date is the first thing after the masthead, in plain type. The lead story is the day's biggest event — a war widening overnight into Bahrain, with both sides' claims shown side by side — and the photograph shows it, not a generic skyline. Then the page earns its breadth: six more stories across five continents and six fields (war, climate, crime, markets, health, disaster), each with a number or a name that pins it to this day and no other — 11 dead after the Sinaloa capture, two killed in Kryvyi Rih, a deal in sight at COP31, the Nasdaq's worst week since March 2020. The text is short, large, and legible even at thumbnail size; every word is spelled out, nothing is garbled, and the layout is a clean front page, not a collage of fragments. No other single image on this day carries the date, the lead, and the breadth together.
+Dear judge — imagine a reader who knows nothing about this day picking up exactly one page. In ten seconds they would know what Saturday 21 November 2026 was: the date sits right under the masthead, the lead story is the night a war widened into a new country, and the photograph proves it instead of decorating it. Then the page keeps earning its space: six more stories across war, climate, crime, markets, health and disaster, each pinned to this day and no other by a name or a number — 11 dead after the Sinaloa capture, two killed in Kryvyi Rih, a deal in sight at COP31, the Nasdaq's worst week since March 2020. The type is short, large and legible even as a thumbnail; every word is spelled out, nothing is garbled, and the whole thing reads as one clean front page rather than a collage of fragments. Date, lead story, breadth — no other single image of this day holds all three together.
 
 ## How it works
 
-`main.py` (Python 3.13 standard library only) copies the pre-built front page `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`), with a 1 MiB size guard. The run is fully deterministic: the same bytes are written on every run.
+`main.py` (Python 3 standard library only) copies the finished front page `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`), refusing the copy if the picture is over 1 MiB. The copy is chunked, byte-counted, and re-checked after delivery, so every run writes exactly the same bytes.
 
-`compose.py` (build-time only, requires Pillow) composes the front page from the generated hero illustration in `assets/hero.png`: masthead and date, lead headline and deck, hero photo with caption, and six story tiles with automatic word-wrap and per-row height fitting so no text ever overflows or overlaps.
+`compose.py` (build-time only, requires Pillow) is the recipe that produced `entry.png` from the generated hero illustration in `assets/hero.png`: masthead and date line, lead headline and deck, hero photo cropped to a wide band with a caption, and six story tiles in a two-column grid with automatic word-wrap and per-row height fitting, so text can never overflow or overlap.
 
 ## Run it
 
